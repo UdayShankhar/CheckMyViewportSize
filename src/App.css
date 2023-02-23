@@ -1,7 +1,7 @@
 .colorSwitch {
   width: 40px;
   position: fixed;
-  right: 1.4rem;
+  right: 1.8rem;
   top: 0.6rem;
 }
 
@@ -28,6 +28,22 @@
 @media screen and (min-width: 320px) and (max-width: 524px) {
   .viewPortContainer {
     width: calc(100vw - 10vw);
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .widthHeight {
+    font-size: 46px;
+  }
+
+  .viewportText {
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 480px) {
+  .viewportText {
+    font-size: 30px;
   }
 }
 
