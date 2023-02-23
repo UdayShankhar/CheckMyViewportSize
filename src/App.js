@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useTheme as useNextTheme } from 'next-themes'
+import { Switch, useTheme } from '@nextui-org/react'
+import { BsSunFill, BsMoonStarsFill } from "react-icons/bs";
+import "./App.css"
+import ViewportDetails from './ViewportDetails';
 
-function App() {
+const App = () => {
+  const { setTheme } = useNextTheme();
+  const { isDark, type } = useTheme();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className='colorSwitch'>
+        <Switch
+          checked={isDark}
+          onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+          iconOn={<BsMoonStarsFill />}
+          iconOff={<BsSunFill />}
+        />
+      </div>
+
+      <ViewportDetails />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

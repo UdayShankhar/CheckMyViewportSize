@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+.colorSwitch {
+  width: 40px;
+  position: fixed;
+  right: 1.4rem;
+  top: 0.6rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.viewPortContainer {
+  width: 600px;
+  height: 300px;
+  /* border: 1px solid; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 60%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.dpr {
+  margin-top: 1.2rem;
+}
+
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .viewPortContainer {
+    transform: translate(-50%, 90%);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 320px) and (max-width: 524px) {
+  .viewPortContainer {
+    width: calc(100vw - 10vw);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 1000px) {
+  .viewportText {
+    font-size: 42px;
+  }
+
+  .widthHeight {
+    font-size: 76px;
+  }
+
+  .dpr {
+    font-size: 31px;
   }
 }
